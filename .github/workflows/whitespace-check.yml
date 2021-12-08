@@ -21,6 +21,8 @@ jobs:
         env:
           BASE_REF: master
           TPM2TOOLS_BRANCH: ${{ inputs.tpm2tools_branch }}
+          TPM2TSS_BRANCH: ${{ inputs.tpm2tss_branch }}
         run: |
           echo Tools branch is: $TPM2TOOLS_BRANCH
+          echo Tools branch is: $TPM2TSS_BRANCH
           git fetch origin "$BASE_REF" && git diff --check "origin/$BASE_REF"
