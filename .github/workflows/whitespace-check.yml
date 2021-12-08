@@ -1,0 +1,23 @@
+name: Reusable whitespace WF
+
+on:
+  workflow_call:
+    inputs:
+      tpm2tools_branch:
+        required: false
+        type: string
+
+jobs:
+  whitespace-check:
+    name: Whitespace check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+      - name: Perform Whitespace Check
+        env:
+          BASE_REF: ${{ github.base_ref }}
+          TPM2TOOLS_BRANCH: ${{ inputs.tpm2tools_branch }}
+        run: |
+          echo Tools branch is: $TPM2TOOLS_BRANCH
+          git fetch origin "$BASE_REF" && git diff --check "origin/$BASE_REF"
