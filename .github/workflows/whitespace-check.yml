@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Perform Whitespace Check
         env:
-          BASE_REF: ${{ github.base_ref }}
+          BASE_REF: master
           TPM2TOOLS_BRANCH: ${{ inputs.tpm2tools_branch }}
         run: |
           echo Tools branch is: $TPM2TOOLS_BRANCH
