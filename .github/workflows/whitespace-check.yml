@@ -6,6 +6,9 @@ on:
       tpm2tools_branch:
         required: false
         type: string
+      tpm2tss_branch:
+        required: false
+        type: string
 
 jobs:
   whitespace-check:
