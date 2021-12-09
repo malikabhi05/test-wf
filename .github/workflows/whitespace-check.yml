@@ -27,4 +27,5 @@ jobs:
           echo Tools branch is: $TPM2TSS_BRANCH
           ls
           pwd
+          echo ${{ github.action_path }}
           git fetch origin "$BASE_REF" && git diff --check "origin/$BASE_REF"
